@@ -1,6 +1,6 @@
 body, html,ul
 {  
-  font-size: 9pt;
+  font-size: 8pt;
   margin: 0px;
   padding: 0px;
   text-align: left;
@@ -20,8 +20,9 @@ html
     background-repeat: repeat-x;
 }
 
-a               {text-decoration:none; color:#66AA66;}
-a:hover         {color:#88bb88; text-decoration:underline;}
+a               {text-decoration:none; color:rgb(32,128,32);}
+a:hover         {color:rgb(0,32,0); text-decoration:underline;
+background-color:rgba(32,164,0,0.1);}
 
 img {
   border:none;
@@ -55,7 +56,7 @@ img {
         border: 1px solid rgb(168,168,168);
         border-bottom: 1px solid rgb(96,96,96);
         border-right: 1px solid rgb(128,128,128);
-        font: 500 100%/100% lato, tahoma ;
+        font: 500 100%/100% lucida grande, segoeUI ;
         display:inline-block;
         padding:0.2rem 0.5rem;
         color:rgb(64,64,64) !important;
@@ -260,35 +261,60 @@ New step styling.
 
 #steplist {
   counter-reset: line-number;
-  position: absolute;
-  top: 85px; /* adjusted as needed - should be 85 or so*/
-  bottom: 0px;
+  position: relative;
+  top: 0; /* adjusted as needed - should be 85 or so*/
   left: 80px;;
   right: 0px;
+  top:0;
+  bottom:0;
   padding-left: 1em;
   padding-right: 1em;
-  overflow: auto;
+  padding-top: 4em;
+  padding-bottom:1em;
   background: white;
   border-left:1px solid rgb(32,32,32);
   box-model:border-box;
-  box-shadow: -.1em 0em 1em rgba(0,0,0,0.5);
+  box-shadow: -.1em 0em 1em rgba(0,0,0,0.5), inset 0 0 2rem rgba(0,0,0,0.1);
+    
   z-index:10;
+  
 }
+#steps-top
+{
+    border:1px solid red;
+    position:relative;
+    
+}
+#steps
+{
+  left: 80px;;
+  right: 0px;
+  top:0;
+  bottom:0;
+  position:relative;
+      
+    
+}
+#steps-footer
+{
+    height:1rem;
+    background-color:rgb(250,250,250);
+}
+
 
 .b-step {
   position: relative;
-  padding: 2px;
 }
 
 .b-step-content, .b-baseurl {
   /*background: #dddddd;*/
-  border-bottom: 1px dotted rgb(128,128,128);
-  margin-left: 100px;
-  padding: 1px;
+  border-top: 1px dotted rgb(128,128,128);
+  padding: 0.3rem 0.1rem;
 }
 
 .b-step-container {
-  padding-left: 1.5em;
+  padding-left: 2.2rem;
+  
 }
 
 /* Compensate for b-baseurl not being wrapped in b-step and its label being wider. */
@@ -299,16 +325,21 @@ New step styling.
 
 .b-step-number:before {
   position: absolute;
-  left: 104px;
+  left: 0;
+  width:2.2 rem;
+  text-align:right;
+  padding-right:0.5rem;
   content: counter(line-number) ". ";
   counter-increment: line-number;
-  color: #555555;
+  color: rgb(200,200,200);
+  
 }
 
 .b-method {
   color: black;
   margin-right: 0.5em;
   font-weight: bold;
+  position:relative;
 }
 
 .b-param-row {
@@ -322,7 +353,7 @@ New step styling.
 }
 
 .b-param {
-  color: black;
+  color: rgba(0,0,0,0.6);
 }
 
 .b-param-input {
@@ -353,20 +384,40 @@ New step styling.
   display: none;
 }
 
+.b-step:hover .b-method:before {
+ position: absolute;
+  left: -12px;
+  width:15px;
+  height:30px;
+  top:50%;
+  margin-top: -15px;
+  text-align:right;
+  padding-right:0.5rem;
+  content: " ";
+ background:url(../img/menuarrow.png) no-repeat center left;
+  z-index:1001;
+}
 .b-step:hover .b-tasks {
-  background-color: #cccccc;
+  background-color:white;
   padding: 3px;
-  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border:1px solid black;
+  box-shadow: 0.2rem 0.2rem 1rem rgba(0,0,0,0.5);
   display: block;
   position: absolute;
-  top: 2px;
-  left: 0px;
+  top: 0rem;
+  margin:0rem;
+  margin-top:-0.5rem;
+  padding-bottom:1rem;
+  left:-86px;/* into the grey space*/
   z-index: 1000;
+  width:91px; 
+  box-model:border-box;
 }
 
 .b-step:hover {
-  background-color: #cccccc;
-  -moz-border-radius: 5px;
+  background-color: #bfee85;
+  border-radius: .2rem;
 }
 
 .b-tasks .b-task {
@@ -402,17 +453,13 @@ New step styling.
  * Informational displays
  */
 #panels  {
-    position:fixed;
-    top: 1.8rem;
-    padding-top:0;
-    left:80px; right:1em;
-    border-left:1px solid rgb(32,32,32);
-    background-color: rgb(255,255,255);
-    box-model:border-box;
-    z-index:15;
+   
+   margin-top:2.2rem;
+   border-bottom:1px solid 81c546;
+   margin-bottom:1rem;
 }
 .panel
-{float:right; border:1px solid red;}
+{}
 
 
 /* base startup"menu of options
@@ -425,7 +472,7 @@ New step styling.
     box-shadow: 2px 2px 8px rgba(0,0,0,0.6);
     display:block;
     position:relative;
-    margin: 5em 80px;
+    margin: 1em 1em 1em 80px ;
     box-model:border-box;
     
 }

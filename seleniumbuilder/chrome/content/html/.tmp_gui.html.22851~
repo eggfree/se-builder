@@ -186,16 +186,7 @@
     </ul>
   </div><!-- Panels of buttons and informational displays. -->
 
-  
-
-    <div id="dialog-attachment-point">
-      <!-- Incidential dialogs put themselves into this div. -->
-    </div>
-  </div><!-- The steps -->
-
-  <div id="steplist" style="display:none;">
-    <div id="steps-top"></div>
-        <div id="panels">
+  <div id="panels">
     <div id="suite-panel" style="display: none;" class="panel">
       <div id="suite-saverequired" style="display: none">
         Suite has unsaved changes.
@@ -252,6 +243,15 @@
     "display: none; font-size: 130%; color: #ffffff; background-color: #880000; padding: 10px; margin: 4px;">
     Some error has occurred!
     </div>
+
+    <div id="dialog-attachment-point">
+      <!-- Incidential dialogs put themselves into this div. -->
+    </div>
+  </div><!-- The steps -->
+
+  <div id="steplist" style="display:none;">
+    <div id="steps-top"></div>
+
     <div id="steps"></div>
 
     <div id="bottom"></div>

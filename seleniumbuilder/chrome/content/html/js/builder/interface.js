@@ -107,7 +107,7 @@ builder.interface = new(function () {
   this.addOnloadHook(function () {
     // Auto-resize the steps area.
     window.setInterval(function() {
-      jQuery('#steplist').css('top', jQuery('#panels').top() + jQuery('#panels').height());
+     // jQuery('#steplist').css('top', jQuery('#panels').top() + jQuery('#panels').height());
     }, 150);
     
     // If the user wants to close the recorder while there's unsaved data, ask for confirmation

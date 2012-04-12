@@ -125,7 +125,50 @@ to have some difference to give the user the idea of a bit of progress
     </ul>
 </div>
 
+<!-- Panels of buttons and informational displays. -->
+<div id="panels">
+  
+  <div id="suite-panel" style="display: none;" class="panel">
+    <div id="suite-saverequired" style="display: none">Suite has unsaved changes.</div>
+    <div id="suite-cannotsave-unsavedscripts" style="display: none">Can't save suite: Save all scripts to disk as HTML first.</div>
+    <div id="suite-cannotsave-notallsel1" style="display: none">Can't save suite: All scripts must be Selenium 1 scripts.</div>
+    <div id="edit-suite-playing" style="display: none;">
+      <a href="#stop-suite-playback" name="stop-suite-playback" id="edit-suite-stop-playback" class="button">Stop Playback</a>
+    </div>
+    <div id="edit-suite-stopping" style="display: none;">
+      Stopping...
+    </div>
+  </div>
 
+  <div id="edit-panel" style="display: none;" class="panel">
+    <span id="edit-local-playing" style="display: none;">
+      <a href="#edit-stop-local-playback" name="edit-stop-local-playback" id="edit-stop-local-playback" class="button">Stop Playback</a>
+    </span>
+    <span id="edit-ondemand-playing" style="display: none;">
+      <a href="#stop-ondemand-playback" name="stop-ondemand-playback" id="edit-stop-ondemand-playback" class="button">Stop Playback</a>
+    </span>
+    <span id="edit-ondemand-stopping" style="display: none;">
+      Stopping...
+    </span>
+    <a href="#edit-clearresults" style="display: none;" name="edit-clearresults" id="edit-clearresults" class="button">Clear results</a>
+  </div>
+  
+  <div id="record-panel" style="display: none;" class="panel">
+    <a href="#assert" name="assert" id="record-verify" class="button">
+      <span class="when-off">Record a verification</span><span class="when-on">Record further steps</span>
+    </a>
+    <a href="#stop" name="stop" id="record-stop-button" class="button">Stop recording</a>
+    <img id="record-spinner" src="img/loading.gif" />
+    <div>
+      <span id="record-help"><br/>Listening for events, click or type in the page to capture another action.</span>
+      <span id="record-verify-help" style="display:none"><br/>Select some text or click on an element in order to register an assertion.</span>
+      <span id="record-waitfor-help" style="display:none"><br/>Select some text or click on an element in order to instruct the test to wait for its presence.</span>
+    </div>
+  </div>
+  
+  <div id="error-panel" style="display: none; font-size: 130%; color: #ffffff; background-color: #880000; padding: 10px; margin: 4px;">
+    Some error has occurred!
+  </div>
   
   <div id="dialog-attachment-point">
     <!-- Incidential dialogs put themselves into this div. -->
@@ -135,65 +178,7 @@ to have some difference to give the user the idea of a bit of progress
 
 <!-- The steps -->
 <div id="steplist" style="display:none;">
-  <div id="steps-top">
-      <div id="panels">
-    <div id="suite-panel" style="display: none;" class="panel">
-      <div id="suite-saverequired" style="display: none">
-        Suite has unsaved changes.
-      </div>
-
-      <div id="suite-cannotsave-unsavedscripts" style="display: none">
-        Can't save suite: Save all scripts to disk as HTML first.
-      </div>
-
-      <div id="suite-cannotsave-notallsel1" style="display: none">
-        Can't save suite: All scripts must be Selenium 1 scripts.
-      </div>
-
-      <div id="edit-suite-playing" style="display: none;">
-        <a href="#stop-suite-playback" name="stop-suite-playback" id=
-        "edit-suite-stop-playback" class="button">Stop Playback</a>
-      </div>
-
-      <div id="edit-suite-stopping" style="display: none;">
-        Stopping...
-      </div>
-    </div>
-
-    <div id="edit-panel" style="display: none;" class="panel">
-      <span id="edit-local-playing" style="display: none;"><a href=
-      "#edit-stop-local-playback" name="edit-stop-local-playback" id=
-      "edit-stop-local-playback" class="button">Stop Playback</a></span> <span id=
-      "edit-ondemand-playing" style="display: none;"><a href="#stop-ondemand-playback"
-      name="stop-ondemand-playback" id="edit-stop-ondemand-playback" class="button">Stop
-      Playback</a></span> <span id="edit-ondemand-stopping" style=
-      "display: none;">Stopping...</span><a href="#edit-clearresults" style=
-      "display: none;" name="edit-clearresults" id="edit-clearresults" class=
-      "button">Clear results</a>
-    </div>
-
-    <div id="record-panel" style="display: none;" class="panel">
-      <a href="#assert" name="assert" id="record-verify" class="button"><span class=
-      "when-off">Record a verification</span><span class="when-on">Record further
-      steps</span></a><a href="#stop" name="stop" id="record-stop-button" class=
-      "button">Stop recording</a> <img id="record-spinner" src="img/loading.gif" />
-
-      <div>
-        <p id="record-help">
-        Listening for events, click or type in the page to capture another action.</p>
-        <p id="record-verify-help" style="display:none">
-        Select some text or click on an element in order to register an assertion.</p>
-        <p id="record-waitfor-help" style="display:none">
-        Select some text or click on an element in order to instruct the test to wait for
-        its presence.</p>
-      </div>
-    </div>
-
-    <div id="error-panel" style=
-    "display: none; font-size: 130%; color: #ffffff; background-color: #880000; padding: 10px; margin: 4px;">
-    Some error has occurred!
-    </div>
-  </div>
+  <div id="steps-top"></div>
   <div id="steps"></div>
   <div id="bottom"></div>
 </div>
