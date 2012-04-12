@@ -23,7 +23,7 @@
       }
     }, 500);
   </script>
-  <link rel="stylesheet" type="text/css" href="css/smoothness/jquery-ui-1.7.custom.css"></link>
+  <link rel="stylesheet" type="text/css" href="css/minimalist/jquery-ui-1.7.custom.css"></link>
   <link rel="stylesheet" type="text/css" href="css/gui.css"></link>
   <title>The Selenium Builder</title>
 </head>
@@ -31,45 +31,51 @@
 <body>
   <span id="loading" style="display: none">Loading...</span> <!-- Header and menu -->
 
-  <div class="header">
+<!-- MENUS and HEADER 
+     these menus show three main states: 
+        Startup
+        record
+        edit
+        -->
     <img id="header-logo" src="img/builder-logo-small.png" alt=
     "Welcome to Selenium Builder!" />
+  <div class="header">
 
+
+    <!-- State designation -->
     <div id="header-status">
-      <span id="heading-startup" style="display: none"></span> <span id="heading-record"
-      style="display: none"><span class="when-off">Currently recording at: <a id=
-      "record-url-display">http://www.example.com/</a></span> <span class=
-      "when-on">Waiting for page to load</span></span> <span id="heading-edit" style=
-      "display: none"><span id="edit-test-script-nopath">Current test has not been
-      <a style="text-decoration:underline;" href="#" id=
-      "edit-test-script-nopath-save">saved</a>.</span> <span id=
-      "edit-test-script-path"></span></span>
+      <span id="heading-startup" style="display: none"></span>
+      <span id="heading-record"  style="display: none">
+            <span  class="when-off">Currently recording at:<a id="record-url-display">http://www.example.com/</a></span>
+            <span  class="when-on">Waiting for page to load</span>
+      </span>
+      <span id="heading-edit" style="display: none">
+          <span id="edit-test-script-nopath">Current test has not been
+            <a  style="text-decoration:underline;" href="#" 
+                id="edit-test-script-nopath-save">saved</a
+            >.</span> 
+            <span id="edit-test-script-path"></span>
+      </span>
     </div>
 
+    <!-- Menus -->
     <ul id="menu" style="display: none;">
-      <li>
-        <a href="#">File</a>
-
+      <li><a href="#">File</a>
         <ul>
-          <li id="script-save-li" style="display: none;"><a href="#script-save" name=
-          "script-save" id="script-save">Save to server</a></li>
-
-          <li><a href="#script-export" name="script-export" id="script-export">Save to
-          disk</a></li>
-
+          <li id="script-save-li" style="display: none;"
+            ><a href="#script-save" name="script-save" id="script-save">Save to server</a></li>
+          <li><a href="#script-export" name="script-export" id="script-export">Save to disk</a></li>
           <li id="script-discard-li"><a href="#script-discard" name="script-discard" id=
           "script-discard">Discard and start over</a></li>
         </ul>
       </li>
 
       <li><a href="#record" name="record" id="record">Record</a></li>
-
       <li>
         <a href="#">Run</a>
-
         <ul>
-          <li><a href="#run-locally" name="run-locally" id="run-locally">Run test
-          locally</a></li>
+          <li><a href="#run-locally" name="run-locally" 
+                 id="run-locally">Run test locally</a></li>
 
           <li id="run-onrc-li" style="display: none;"><a href="#run-onrc" name="run-onrc"
           id="run-onrc">Run on Selenium RC</a></li>
@@ -108,12 +114,10 @@
           <li><a href="#suite-recordscript" name="suite-recordscript" id=
           "suite-recordscript">Record new script</a></li>
 
-          <li><a href="#suite-addscript" name="suite-addscript" id="suite-addscript">Add
-          script from file</a></li>
+          <li><a href="#suite-addscript" name="suite-addscript" id="suite-addscript">Add script from file</a></li>
 
           <li><a href="#suite-importscript-sel2" name="suite-importscript-sel2" id=
-          "suite-importscript-sel2">Add imported Selenium 1 script from Selenium 2
-          file</a></li>
+          "suite-importscript-sel2">Add imported Selenium 1 script from Selenium 2 file</a></li>
 
           <li><a href="#suite-addscript-sel2" name="suite-addscript-sel2" id=
           "suite-addscript-sel2">Add script from Selenium 2 file</a></li>
@@ -121,10 +125,9 @@
           <li style="list-style: none"><span id="multiscript-1"></span></li>
 
           <li><span id="multiscript-1"><a href="#suite-removescript" name=
-          "suite-removescript" id="suite-removescript">Remove current
-          script</a></span></li>
+          "suite-removescript" id="suite-removescript">Remove current script</a></span></li>
 
-          <li><span id="multiscript-1">Scripts</span></li>
+          <li><span id="multiscript-1"><a>Scripts</a></span></li>
 
           <li style="list-style: none"><span id="multiscript-1"><span id=
           "scriptlist"></span></span></li>
@@ -135,9 +138,6 @@
 
   <div id="startup" style="display: none">
     <h1>Selenium Builder</h1>
-
-    <p>Would you like to:</p>
-
     <ul>
       <li id="startup-open-sel1">
         <h3><a name="startup-open-sel1" href="#startup-open-sel1">Open</a> a Selenium 1 test file</h3>
@@ -229,13 +229,13 @@
       "button">Stop recording</a> <img id="record-spinner" src="img/loading.gif" />
 
       <div>
-        <span id="record-help"><br />
-        Listening for events, click or type in the page to capture another action.</span>
-        <span id="record-verify-help" style="display:none"><br />
-        Select some text or click on an element in order to register an assertion.</span>
-        <span id="record-waitfor-help" style="display:none"><br />
+        <p id="record-help">
+        Listening for events, click or type in the page to capture another action.</p>
+        <p id="record-verify-help" style="display:none">
+        Select some text or click on an element in order to register an assertion.</p>
+        <p id="record-waitfor-help" style="display:none">
         Select some text or click on an element in order to instruct the test to wait for
-        its presence.</span>
+        its presence.</p>
       </div>
     </div>
 
