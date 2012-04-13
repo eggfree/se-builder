@@ -20,8 +20,12 @@ builder.dialogs.exportscript.show = function(node) {
     href: '#cancel'
   });
   
-  jQuery(node).html('').
-      append(newNode('h3', 'Choose export format')).
+  jQuery(node).html('');
+
+  var tmpForm = newNode('form', {method:'get', action:'#record'})
+  
+  node.append(tmpForm);
+  jQuery(tmpForm).append(newNode('h3', 'Choose export format')).
       append(format_list).
       append(cancel_b);
   

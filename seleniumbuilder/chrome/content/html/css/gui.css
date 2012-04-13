@@ -279,6 +279,7 @@ New step styling.
   padding-bottom:1em;
   background: white;
   border-left:1px solid rgb(32,32,32);
+  border-bottom:1px solid rgb(32,32,32);
   box-model:border-box;
   box-shadow: -.1em 0em 1em rgba(0,0,0,0.5), inset 0 0 2rem rgba(0,0,0,0.1);  
 }
@@ -293,6 +294,9 @@ New step styling.
     
      
 }
+
+#dialog-attachment-point form ul
+{min-width:20em; padding: 1rem; margin:1rem;width:100%;}
 
 texta{width:100%;}
 #steps-top
@@ -461,28 +465,28 @@ texta{width:100%;}
  * Informational displays
  */
 #panels  {
-   border-bottom:1px solid 81c546;
-   margin-bottom:1rem;
+   border-bottom:1px solid #81c546;
+   padding-bottom:1rem;
    
 }
 
 .panel p
-{ font-size:90%;color: rgb(128,164,96);
+{color: rgb(128,164,96);
 margin:0;
-padding-bottom:0.2rem;
+padding:0.3rem 0;
 }
 
 .panel 
 {
     display:block; 
     float:left;
-    padding:0;margin:0;    
+    padding:0;margin-bottom:2px;    
 }
 
 .info
 
 {
-    float:none;
+    float:none !important;
     background-color:rgb(240,240,200);
     border: 1px solid rgb(220,220,150);
     border-radius: .1rem;
@@ -490,7 +494,7 @@ padding-bottom:0.2rem;
     margin-bottom:0.5rem;
     padding:0.5rem;
     color:rgb(128,128,0);
-    width:100%;
+    
 }
 
 /* base startup"menu of options
@@ -505,6 +509,7 @@ padding-bottom:0.2rem;
     position:relative;
     margin: 1em 1em 1em 80px ;
     box-model:border-box;
+    
     
 }
 #startup *
