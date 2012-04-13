@@ -14,18 +14,19 @@ builder.dialogs.record = new(function () {
     show: function (anode) {
       node = anode;
       node.html('');
-      node.append(newNode('span', {style:"font-weight: bold;"}, 'Start recording a new script at'));
+    
       node.append(newNode('form', {method:'get', action:'#record'},
+          newNode('h4', {style:"font-weight: bold;"}, 'Start recording a new script at'),
           newNode('p',
               newNode('input', {id:'startup-url-2', type:'text', class:'texta', size:'24'}),
               newNode('p', {},
-                newNode('input', {type:'submit', value:'Record new Selenium 1 Script', class:'button',
+                newNode('input', {type:'submit', value:'Record new Se 1', class:'button',
                   click:function(e) {
                     builder.record.startRecording(jQuery("#startup-url-2").val(), builder.selenium1);
                     node.html('');
                     builder.gui.menu.updateRunSuiteOnRC();
                   }}),
-                newNode('input', {type:'submit', value:'Record new Selenium 2 script', class:'button',
+                newNode('input', {type:'submit', value:'Record new Webdriver', class:'button',
                   click:function(e) {
                     builder.record.startRecording(jQuery("#startup-url-2").val(), builder.selenium2);
                     node.html('');
